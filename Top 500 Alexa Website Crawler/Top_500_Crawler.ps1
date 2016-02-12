@@ -31,9 +31,8 @@ $URIS =
 "http://www.alexa.com/topsites/global;16", 
 "http://www.alexa.com/topsites/global;17",
 "http://www.alexa.com/topsites/global;18",
-"http://www.alexa.com/topsites/global;19", 
-"http://www.alexa.com/topsites/global;20",
-"http://www.alexa.com/topsites/global;21"
+"http://www.alexa.com/topsites/global;19"
+
 )
 
 foreach ($URI in $URIS) 
