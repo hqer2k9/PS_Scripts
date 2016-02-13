@@ -9,8 +9,6 @@
 ####################### STILL UNDER CONSTRUCTION #######################
 ########################################################################
 
-[Net.ServicePointManager]::ServerCertificateValidationCallback = {$true}
-
 $URIS = 
 (
 "http://www.alexa.com/topsites/global;0", 
@@ -32,14 +30,13 @@ $URIS =
 "http://www.alexa.com/topsites/global;17",
 "http://www.alexa.com/topsites/global;18",
 "http://www.alexa.com/topsites/global;19"
-
 )
 
-foreach ($URI in $URIS) 
+#define output! and create textfile before run
+foreach ($URI in $URIS)
 {
   
     $URI 
-    $HTML = Invoke-WebRequest -Uri $URI 
-    ($HTML.ParsedHtml.getElementsByTagName(‘div’) | Where{ $_.className -eq ‘count’ } ).innerText  
- } Out-GridView
-
+    $HTML = Invoke-WebRequest -Uri $URI
+    ($HTML.ParsedHtml.getElementsByTagName(‘p’) | Where{ $_.className -eq ‘desc-paragraph’ } ).innerText | Out-File -append "c:\temp\test.txt"
+ }
