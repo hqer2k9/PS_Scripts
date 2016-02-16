@@ -1,5 +1,4 @@
-# PS_Scripts
-PowerShell Scripts
+# PowerShell Scripts
 
 Hello everyone!
 
